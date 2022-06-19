@@ -79,6 +79,57 @@ for (i = 0; i < p - 1; i++)
 	printf(" Thread %d", ans[p - 1]);
 }
 
-# Q4
-The banker will grant a request if it satisfies the safety algorithm outlined in Section 8.6.3.1. If a request does not leave the system in a safe state, the banker will deny it. The request function should return 0 if successful and –1 if unsuccessful. Demonstrate an order in which the threads may complete for successful request.  
 
+# Q4
+The banker will grant a request if it satisfies the safety algorithm outlined in Section 8.6.3.1. If a request does not leave the system in a safe state, the banker will deny it. The request function should return 0 if successful and –1 if unsuccessful. Demonstrate an order in which the threads may complete for successful request.  int request(vector<int>& available, vector<vector<int>>& max, vector<vector<int>>& allocation, int thread, vector<int>& req) {
+for (int i = 0; i < req.size(); i++)
+if (req[i] > max[thread][i])
+return -1;
+for (int i = 0; i < req.size(); i++)
+if (req[i] > available[i])
+return -1;
+for (int i = 0; i < req.size(); i++) allocation[thread][i] += req[i];
+for (int i = 0; i < req.size(); i++) available[i] -= req[i];
+if (is_safe(available, max, allocation))
+return 0;
+for (int i = 0; i < req.size(); i++) allocation[thread][i] -= req[i];
+for (int i = 0; i < req.size(); i++) available[i] += req[i];
+return -1;
+}
+int main() {
+int m, n; cin >> m >> n; vector<int> available(m);
+for (int i = 0; i < m; i++) cin >> available[i]; vector<vector<int>> max(n, vector<int>(m));
+for (int i = 0; i < n; i++)
+for (int j = 0; j < m; j++) cin >> max[i][j]; vector<vector<int>> allocation(n, vector<int>(m));
+for (int i = 0; i < n; i++)
+for (int j = 0; j < m; j++) cin >> allocation[i][j];
+int thread, x, y, z; cin >> thread >> x >> y >> z; vector<int> req = {x, y, z};
+if (request(available, max, allocation, thread, req) == 0) cout << "request can be granted successfully\n"; else
+cout << "request can not be granted successfully\n";
+return 0;
+}
+
+
+# Q5
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+bool is_safe(vector<int>& available, vector<vector<int>>& max, vector<vector<int>>& allocation) { vector<int> work(available); vector<bool> finish(max.size(), false);
+int cnt = 0; while (cnt < max.size()) { bool found = false;
+for (int i = 0; i < max.size(); i++) {
+if (!finish[i]) { bool can_allocate = true;
+for (int j = 0; j < work.size(); j++)
+if (max[i][j] - allocation[i][j] > work[j]) { can_allocate = false; break;
+}
+if (can_allocate) {
+for (int j = 0; j < work.size(); j++) work[j] += allocation[i][j]; finish[i] = true;
+found = true; cnt++;
+}
+}
+}
+if (!found)
+return false;
+}
+return true;
+}
