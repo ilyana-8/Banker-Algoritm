@@ -79,6 +79,8 @@ for (i = 0; i < p - 1; i++)
 	printf(" Thread %d", ans[p - 1]);
 }
 
+(https://github.com/ilyana-8/Banker-Algorithm/blob/main/Img 1.jpg)
+
 
 # Q4
 The banker will grant a request if it satisfies the safety algorithm outlined in Section 8.6.3.1. If a request does not leave the system in a safe state, the banker will deny it. The request function should return 0 if successful and –1 if unsuccessful. Demonstrate an order in which the threads may complete for successful request.  int request(vector<int>& available, vector<vector<int>>& max, vector<vector<int>>& allocation, int thread, vector<int>& req) {
