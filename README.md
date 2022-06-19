@@ -11,7 +11,7 @@ Prepared By :
 Q1
 Q2
 Q3
-Q4
+Q4(https://github.com/ilyana-8/Banker-Algorithm/blob/main/README.md#Q4)
 Q5
 
 
