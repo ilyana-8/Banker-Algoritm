@@ -7,12 +7,15 @@ Prepared By :
 | Wan Nurshafiqah Nabila Binti Wan Masri   | 2013674  |
 | Faridah Ilyana Binti Ahmad Shariffuddin  | 2022144  |
 
+*Lecturer Dr. Rizal Bin Mohd. Nor*
+
+
 # CONTENT
-Q1
-Q2
-Q3
-Q4(https://github.com/ilyana-8/Banker-Algorithm/blob/main/README.md#Q4)
-Q5
+1. [Q1](https://github.com/ilyana-8/Banker-Algorithm/blob/main/README.md#Q1)
+2. [Q2](https://github.com/ilyana-8/Banker-Algorithm/blob/main/README.md#Q2)
+3. [Q3](https://github.com/ilyana-8/Banker-Algorithm/blob/main/README.md#Q3)
+4. [Q4](https://github.com/ilyana-8/Banker-Algorithm/blob/main/README.md#Q4)
+5. [Q5](https://github.com/ilyana-8/Banker-Algorithm/blob/main/README.md#Q5)
 
 
 
