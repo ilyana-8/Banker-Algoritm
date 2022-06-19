@@ -79,7 +79,7 @@ for (i = 0; i < p - 1; i++)
 	printf(" Thread %d", ans[p - 1]);
 }
 
-(https://github.com/ilyana-8/Banker-Algoritm/blob/main/Images/Img%201.png)
+ ![1](https://github.com/ilyana-8/Banker-Algoritm/blob/main/Images/Img%201.png)<br>
 
 
 # Q4
@@ -135,3 +135,8 @@ return false;
 }
 return true;
 }
+				
+![2](https://github.com/ilyana-8/Banker-Algoritm/blob/main/Images/Img%202.png)<br>
+![3](https://github.com/ilyana-8/Banker-Algoritm/blob/main/Images/Img%203.png)<br>
+
+				
